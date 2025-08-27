@@ -22,9 +22,7 @@ export const Route = createFileRoute("/(auth)/login/")({
 function RouteComponent() {
   return (
     <div className="p-8 w-96 flex flex-col justify-center items-center ">
-      <h1 className="text-center text-2xl font-bold text-app-primary">
-        Login In Page
-      </h1>
+      <h1 className="text-center text-2xl font-bold text-app-primary">Login</h1>
       <LoginForm />
     </div>
   );

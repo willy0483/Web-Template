@@ -10,7 +10,6 @@ export const Route = createRootRoute({
   component: () => (
     <>
       <HeadContent />
-
       <AuthProvider>
         <Header />
         <div className="min-h-[calc(100vh-80px)]">

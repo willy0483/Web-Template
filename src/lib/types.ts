@@ -75,6 +75,7 @@ export interface T_Product {
   createdAt: string;
   updatedAt: string;
   favorites: T_Favorite[];
+  numFavorites: number;
 }
 
 export interface T_Favorite {

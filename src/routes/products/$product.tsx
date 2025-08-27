@@ -28,7 +28,6 @@ export const Route = createFileRoute("/products/$product")({
 
 function RouteComponent() {
   const { slug } = Route.useLoaderData();
-
   const {
     data: item,
     isError,
