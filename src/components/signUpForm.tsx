@@ -94,6 +94,7 @@ export const SignUpForm = () => {
           required
         />
         <button
+          aria-label="Toggle password visibility"
           type="button"
           onClick={togglePasswordVisibility}
           className="text-app-secondary hover:text-app-text"

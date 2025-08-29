@@ -9,11 +9,13 @@ export const api = {
     if (id) {
       endpoint = `${BACKEND_URL}/${url}/${id}`;
     }
+    // get data
     const res = await fetch(endpoint, {
       headers: {
         authorization: `Bearer ${accessToken}`,
       },
     });
+    // data to js object
     const data = await res.json();
     return data;
   },

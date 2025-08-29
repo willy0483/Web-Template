@@ -20,6 +20,7 @@ const Card = ({
 
   const queryClient = useQueryClient();
 
+  // Show if the user has favorited this item
   const isFavorited = favorites.some(
     (fav) => fav.userId === loginData?.user.id
   );
@@ -37,7 +38,9 @@ const Card = ({
   };
 
   const handleClick = () => {
-    toast.error("Du skal være logget ind for at kunne tilføje favoritter.");
+    toast.error("Du skal være logget ind for at kunne tilføje favoritter.", {
+      id: "noLogin",
+    });
   };
 
   return (
@@ -46,13 +49,19 @@ const Card = ({
         src={imageUrl}
         alt={title}
         className="w-full h-48 object-cover object-center bg-app-background"
+        fetchPriority="high"
+        loading="lazy"
+        decoding="async"
       />
       <figcaption className="p-4 flex flex-col gap-2 justify-center md:flex-1">
         <p className="text-xl font-bold text-app-primary mb-1">{title}</p>
         <article className="text-gray-600 text-sm">{description}</article>
         <div className="flex justify-between items-center mt-2">
           <Link to="/products/$product" params={{ product: slug }}>
-            <button className="hover:cursor-pointer px-4 py-2 bg-green-gold text-white rounded bg-app-primary hover:bg-app-accent transition">
+            <button
+              aria-label="Read mere"
+              className="hover:cursor-pointer px-4 py-2 bg-green-gold text-white rounded bg-app-primary hover:bg-app-accent transition"
+            >
               Læs mere
             </button>
           </Link>

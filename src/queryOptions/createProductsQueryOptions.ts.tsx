@@ -6,6 +6,7 @@ export const createProductsQueryOptions = () => {
   return queryOptions({
     queryKey: ["products"],
     queryFn: getProducts,
+    staleTime: 1000 * 60 * 10,
   });
 };
 

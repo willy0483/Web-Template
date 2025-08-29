@@ -30,19 +30,27 @@ const Header = () => {
         {!isLoggedIn ? (
           <div>
             <Link to={"/login"}>
-              <button className="px-5 hover:cursor-pointer py-2 rounded-lg font-semibold bg-app-primary text-white hover:bg-app-accent transition-colors shadow-sm border border-app-primary hover:border-app-accent">
+              <button
+                aria-label="Login"
+                className="px-5 hover:cursor-pointer py-2 rounded-lg font-semibold bg-app-primary text-white hover:bg-app-accent transition-colors shadow-sm border border-app-primary hover:border-app-accent"
+              >
                 Login
               </button>
             </Link>
             <Link to={"/signup"}>
-              <button className="px-5 hover:cursor-pointer py-2 rounded-lg font-semibold bg-app-surface text-app-primary border border-app-primary hover:bg-app-primary hover:text-white hover:border-app-accent transition-colors shadow-sm ml-2">
+              <button
+                aria-label="Signup"
+                className="px-5 hover:cursor-pointer py-2 rounded-lg font-semibold bg-app-surface text-app-primary border border-app-primary hover:bg-app-primary hover:text-white hover:border-app-accent transition-colors shadow-sm ml-2"
+              >
                 Sign Up
               </button>
             </Link>
           </div>
         ) : (
           <Link to="/login">
-            <Button onClick={handleLogout}>Logout</Button>
+            <Button aria-label="Logout" onClick={handleLogout}>
+              Logout
+            </Button>
           </Link>
         )}
       </div>

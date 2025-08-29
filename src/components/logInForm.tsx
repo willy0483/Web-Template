@@ -72,6 +72,7 @@ export const LoginForm = () => {
         />
         <button
           type="button"
+          aria-label="Toggle password visibility"
           onClick={togglePasswordVisibility}
           className="text-app-secondary hover:text-app-text"
         >

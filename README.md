@@ -1,69 +1,67 @@
-# React + TypeScript + Vite
+# Web-Template: Your Starter Kit for Web Projects
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a web project template that helps you build awesome websites using modern tools. It's designed to be easy to use, especially if you're just starting out or want to quickly set up a new project.
 
-Currently, two official plugins are available:
+## What's Inside?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This template comes with some popular technologies:
 
-## Expanding the ESLint configuration
+- **React**: A library for building interactive parts of your website.
+- **TypeScript**: Helps you write code with fewer mistakes by checking it as you type.
+- **Vite**: A super fast tool that gets your project running quickly in development.
+- **Tanstack Router**: Helps you manage different pages and navigation in your app.
+- **Tanstack Query**: Makes managing data fetching, caching, and updating much easier.
+- **Tailwind CSS**: Makes styling your website much easier with ready-to-use classes.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## How to Get Started
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Ready to start coding? Here's what you need to do:
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### 1. Get the Code
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+First, you need to download this project to your computer:
+
+```bash
+git clone https://github.com/your-username/web-template.git
+cd web-template
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Install Dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Next, install all the necessary tools and libraries the project uses:
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+### 3. Run the Project
+
+Now you can start the development server. This will open your project in your web browser:
+
+```bash
+npm run dev
+```
+
+### 4. Build for Production
+
+When your project is ready to be shared with the world, run this command to create optimized files:
+
+```bash
+npm run build
+```
+
+### 5. Preview Your Build
+
+Want to see how your optimized project looks before deploying? Use this:
+
+```bash
+npm run preview
+```
+
+## Basic Commands
+
+Here are the main commands you'll use:
+
+- `npm run dev`: Starts the project for development.
+- `npm run build`: Prepares your project for deployment.
+- `npm run preview`: Shows you the built project.

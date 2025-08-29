@@ -7,6 +7,7 @@ const SubmitButton = ({ children }: PropsWithChildren) => {
   return (
     <button
       type="submit"
+      aria-label="submit form"
       disabled={pending}
       className="w-full bg-app-primary text-app-background py-2 rounded-2xl hover:cursor-pointer"
     >

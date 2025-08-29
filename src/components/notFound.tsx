@@ -28,6 +28,7 @@ const NotFound = () => {
         Sorry, the page you are looking for does not exist.
       </p>
       <button
+        aria-label="Go back"
         onClick={onBack}
         className="mt-2 px-4 py-2 bg-red-500 hover:cursor-pointer text-white rounded transition-colors"
       >

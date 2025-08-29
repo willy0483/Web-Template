@@ -35,8 +35,6 @@ export const Route = createFileRoute("/products/")({
   }),
 });
 
-const ITEMS_PER_PAGE = 9;
-
 function RouteComponent() {
   const { data, isPending, isError, refetch, error } = useSuspenseQuery(
     createProductsQueryOptions()
@@ -44,6 +42,7 @@ function RouteComponent() {
   const [currentPage, setCurrentPage] = useState(0);
   const [sortBy, setSortBy] = useState("alphabetical");
 
+  // sort data by users choice
   const sortedData = [...data];
   switch (sortBy) {
     case "alphabetical":
@@ -65,6 +64,11 @@ function RouteComponent() {
       break;
   }
 
+  /*
+    https://www.npmjs.com/package/react-paginate
+    code from react-paginate
+  */
+  const ITEMS_PER_PAGE = 9;
   const pageCount = Math.ceil(sortedData.length / ITEMS_PER_PAGE);
   const offset = currentPage * ITEMS_PER_PAGE;
   const currentItems = sortedData.slice(offset, offset + ITEMS_PER_PAGE);
@@ -132,6 +136,7 @@ function RouteComponent() {
             </div>
           </section>
           <section className="grid grid-cols-1 py-4 md:grid-cols-2 xl:grid-cols-3 gap-4">
+            {/* only render the current item max 9 items at a time */}
             {currentItems?.map((product: T_Product) => (
               <Card key={product.id} {...product} />
             ))}

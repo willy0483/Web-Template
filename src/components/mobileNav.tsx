@@ -70,6 +70,7 @@ const Nav = () => {
 
           {isLoggedIn ? (
             <Button
+              aria-label="Logout"
               onClick={handleLogout}
               className="hover:text-app-primary transition-colors duration-150"
             >

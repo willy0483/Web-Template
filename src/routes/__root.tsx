@@ -8,20 +8,25 @@ import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 
 export const Route = createRootRoute({
   component: () => (
-    <>
+    <main>
+      {/* meta data */}
       <HeadContent />
+      {/* auth and userData */}
       <AuthProvider>
         <Header />
-        <div className="min-h-[calc(100vh-80px)]">
+        <section className="min-h-[calc(100vh-80px)]">
           <Outlet />
-        </div>
+        </section>
         <Toaster />
         <Footer />
+        {/* Add dev tools for router */}
         <TanStackRouterDevtools />
       </AuthProvider>
-    </>
+    </main>
   ),
   notFoundComponent: NotFound,
+
+  // Setup meta data for site
   head: () => ({
     meta: [
       {
